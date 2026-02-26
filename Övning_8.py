@@ -42,10 +42,10 @@ def skicka_beställning():
     if glutenfri.get(): tillägg.append("glutenfri botten")
 
     kommentar = önskemål_fält.get("1.0", tk.END).strip()
-    sammanfattning = f"Du har beställt en {storlek.get().lower} pizza"
+    sammanfattning = f"Du har beställt en {storlek.get().lower()} pizza "
 
     if tillägg:
-        sammanfattning += "med" + ", ".join(tillägg)
+        sammanfattning += "med " + ", ".join(tillägg)
     if kommentar:
         sammanfattning += f".\nÖnskemål: {kommentar}"
     else:
@@ -56,4 +56,4 @@ def skicka_beställning():
 skicka_knapp = tk.Button(root, text="Skicka beställning", command=skicka_beställning)
 skicka_knapp.grid(row=3, column=0, columnspan=2, pady=10)
 
-root.mainloop
+root.mainloop()
